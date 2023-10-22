@@ -54,6 +54,11 @@ app.use(cors(
 ));
 app.use(express.json());
 
+app.get("/", (req, res) =>{
+  res.json("Hello");
+}
+)
+
 // for user registration, check if user is already registered else create!
 app.post("/register", async (req, res) => {
   const { username, password } = req.body;
@@ -140,6 +145,7 @@ app.get("/todos", async (req, res) => {
       console.log(`No document Todos found!`);
   }
 });
+
 
 // Starts express servers conncetion with the DB and communicates with it through the specified port
 const db = mongoose.connection;
