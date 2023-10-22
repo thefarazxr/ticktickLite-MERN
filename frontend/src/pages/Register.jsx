@@ -12,7 +12,7 @@ export default function Register() {
 
   const register = (e) => {
     e.preventDefault();
-    fetch(`https://ticktick-lite-mern-gwms.vercel.app/register`, { //expressJS server communicates through this port
+    fetch(`https://ticktick-lite-mern.vercel.app/register`, { //expressJS server communicates through this port
       method: "POST",
       headers: {
         "Content-Type": "application/json",
