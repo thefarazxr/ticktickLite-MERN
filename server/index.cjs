@@ -49,7 +49,7 @@ const Todos = mongoose.model("Todos", todosSchema);
 app.use(cors(
   {
     origin: ["https://ticktick-lite-mern-gwms.vercel.app"],
-    methods: ["GET", "POST"],
+    methods: "GET, POST",
     credentials: true
   }
 ));
@@ -57,7 +57,6 @@ app.use(cors(
 app.use(router);
 app.use(express.json());
 
-app.use(cors(corsOptions));
 
 
 
