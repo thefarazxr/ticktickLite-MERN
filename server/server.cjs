@@ -47,7 +47,7 @@ const Todos = mongoose.model("Todos", todosSchema);
 // MiddleWare setup using CORS to share data b/w different sources
 app.use(cors(
   {
-    origin: ["https://ticktick-lite-mern.vercel.app/"],
+    origin: ["https://ticktick-lite-mern.vercel.app"],
     methods: ["GET", "POST"],
     credentials: true
   }
