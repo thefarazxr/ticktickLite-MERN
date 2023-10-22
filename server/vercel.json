@@ -11,8 +11,6 @@
         "dest": "/"
     }
     ],
-
-    
         "headers": [
         {
             "source": "/server/(.*)",
