@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 // Mongoose is an Object Data Modeling (ODM) library for MongoDB and Node.js
 // Mongoose makes it easier to interact with DB by avoiding many complexities.
 const app = express();
+const router = express.Router();
 const port = 4000;
 
 const ObjectId = require("mongoose").Types.ObjectId;
