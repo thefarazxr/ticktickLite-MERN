@@ -45,7 +45,13 @@ const todosSchema = new mongoose.Schema({
 const Todos = mongoose.model("Todos", todosSchema);
 
 // MiddleWare setup using CORS to share data b/w different sources
-app.use(cors());
+app.use(cors(
+  {
+    origin: ["https://ticktick-lite-mern.vercel.app/"],
+    methods: ["GET", "POST"],
+    credentials: true
+  }
+));
 app.use(express.json());
 
 // for user registration, check if user is already registered else create!
