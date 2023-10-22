@@ -5,12 +5,7 @@
         "src": "index.cjs", "use": "@vercel/node" 
     }
     ],
-    "routes": [
-    {
-        "src": "/(.*)",
-        "dest": "/"
-    }
-    ],
+   
         "headers": [
         {
             "source": "/server/(.*)",
