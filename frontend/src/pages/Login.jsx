@@ -18,7 +18,7 @@ export default function Login() {
 
   const login = (e) => {
     e.preventDefault();
-    fetch(`https://ticktick-lite-mern.vercel.app/login`, {
+    fetch(`https://ticktick-lite-mern-api2.vercel.app/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
