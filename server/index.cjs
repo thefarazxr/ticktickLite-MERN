@@ -16,29 +16,29 @@ const ObjectId = require("mongoose").Types.ObjectId;
 
 
 // MiddleWare setup using CORS to share data b/w different sources
-// app.use(cors(
-//   {
-//     origin: "https://ticktick-lite-mern-gwms.vercel.app",
-//     methods: "GET, POST",
-//     credentials: true
-//   }
-// ));
+app.use(cors(
+  {
+    origin: "https://ticktick-lite-mern-gwms.vercel.app",
+    methods: "GET, POST",
+    credentials: true
+  }
+));
 
 const allowedOrigins = ['https://ticktick-lite-mern-gwms.vercel.app'];
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-  })
-);
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error('Not allowed by CORS'));
+//       }
+//     },
+//   })
+// );
 
-app.options('*', cors());
+// app.options('*', cors());
 
 
 app.use(router);
@@ -46,6 +46,7 @@ app.use(express.json());
 
 
 router.get("/", (req, res) =>{
+  res.header('Access-Control-Allow-Origin', allowedOrigins);
   res.json("Hello");
 }
 )
@@ -101,6 +102,7 @@ router.post("/register", async (req, res) => {
 
 // Simple Login auth code
 router.post("/login", async (req, res) => {
+
   const { username, password } = req.body;
   const user = await User.findOne({ username }).exec();
   if (!user || user.password !== password) {
@@ -110,6 +112,7 @@ router.post("/login", async (req, res) => {
     });
     return;
   }
+  res.header('Access-Control-Allow-Origin', allowedOrigins);
   res.json({
     message: "success",
   });
