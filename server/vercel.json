@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
     { 
-        "src": "*.jsx", "use": "@vercel/node" 
+        "src": "*.cjs", "use": "@vercel/node" 
     }
     ],
     "routes": [
