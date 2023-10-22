@@ -14,6 +14,25 @@ const port = 4000;
 
 const ObjectId = require("mongoose").Types.ObjectId;
 
+
+// MiddleWare setup using CORS to share data b/w different sources
+app.use(cors(
+  {
+    origin: "https://ticktick-lite-mern-gwms.vercel.app",
+    methods: "GET, POST",
+    credentials: true
+  }
+));
+
+app.use(router);
+app.use(express.json());
+
+
+router.get("/", (req, res) =>{
+  res.json("Hello");
+}
+)
+
 // mongoose.connect("mongodb://127.0.0.1:27017/todo", {
 //   useUnifiedTopology: true,
 //   useNewUrlParser: true,
@@ -45,26 +64,9 @@ const todosSchema = new mongoose.Schema({
 });
 const Todos = mongoose.model("Todos", todosSchema);
 
-// MiddleWare setup using CORS to share data b/w different sources
-app.use(cors(
-  {
-    origin: "https://ticktick-lite-mern-gwms.vercel.app",
-    methods: "GET, POST",
-    credentials: true
-  }
-));
-
-app.use(router);
-app.use(express.json());
-
-
-app.get("/", (req, res) =>{
-  res.json("Hello");
-}
-)
 
 // for user registration, check if user is already registered else create!
-app.post("/register", async (req, res) => {
+router.post("/register", async (req, res) => {
   const { username, password } = req.body;
   const user = await User.findOne({ username }).exec();
   if (user) {
@@ -81,7 +83,7 @@ app.post("/register", async (req, res) => {
 });
 
 // Simple Login auth code
-app.post("/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   const { username, password } = req.body;
   const user = await User.findOne({ username }).exec();
   if (!user || user.password !== password) {
@@ -98,7 +100,7 @@ app.post("/login", async (req, res) => {
 
 
 // POST Request, ToDo List Authentication then => Create or Update based on existence of ToDo Object
-app.post("/todos", async (req, res) => {
+router.post("/todos", async (req, res) => {
   const { authorization } = req.headers;
   const [, token] = authorization.split(" ");
   const [username, password] = token.split(":");
@@ -127,7 +129,7 @@ app.post("/todos", async (req, res) => {
 });
 
 // GET request to fetch all existing ToDo list Objects
-app.get("/todos", async (req, res) => {
+router.get("/todos", async (req, res) => {
   const { authorization } = req.headers;
   const [, token] = authorization.split(" ");
   const [username, password] = token.split(":");
