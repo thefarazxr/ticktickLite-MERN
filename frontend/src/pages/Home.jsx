@@ -12,17 +12,18 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      {credents && <button style={{backgroundColor:'red'}} onClick={logout}>Logout!</button>}
-      <h2 style={{marginTop:'15px', marginBottom:'10px'}}>TickTick-Lite</h2>
+      <h3 style={{marginTop:'45px', marginBottom:'5px'}}>TickTick-Lite</h3>
       
-      <p style={{color:'pink',marginTop:'15px', marginBottom:'10px'}}>By Farazuddin Mohammed <br /> X, IG, GitHub:(@thefarazxr)</p>
-      <p style={{ color:'yellow',marginTop:'15px', marginBottom:'10px'}}>Tech stack: MERN <br /> (MongoDB Atlas, ExpressJS, ReactJS, NodeJS)</p>
-      <h3 style={{marginTop:'15px', marginBottom:'10px'}}>Hello, {credents && credents.username}</h3>
+      <h4 style={{ marginBottom:'5px'}}>Hello, {credents && credents.username}</h4>
      
       {!credents && <Link to="/register">Register</Link>}
       <br />
       {!credents && <Link to="/login">Login</Link>}
       {credents && <Todos />}
+      {credents && <button style={{backgroundColor:'red', marginTop:'10px'}} onClick={logout}>Logout!</button>}
+
+      <p style={{fontSize:'16px',color:'pink',marginTop:'15px', marginBottom:'10px'}}>By Farazuddin Mohammed <br /> X, IG, GitHub:(@thefarazxr)</p>
+      <p style={{ fontSize:'16px',color:'yellow',marginTop:'15px', marginBottom:'10px'}}>Tech stack: MERN <br /> (MongoDB Atlas, ExpressJS, ReactJS, NodeJS)</p>
     </div>
   );
 }

@@ -1,107 +1,108 @@
 /* Reset some default browser styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* Body background color */
-  body {
-    background-color: #ffffff00;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Container for the to-do app */
-  .todoContainer {
-    background-color: #8400ff;
-    border-radius: 12px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: 350px;
-  }
-  
-  /* Heading styles */
-  h1 {
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  /* To-do list styles */
-  .task {
-    display: flex;
-    align-items: center;
-    margin: 5px 0;
-    background-color: #000000bf;
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 12px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+font-size: 21px;
 
-  }
-  
-  /* Checkbox styles */
-  .task input[type="checkbox"] {
-    margin-right: 10px;
-    cursor: pointer;
-    background-color: #000000bf;
+}
 
-  }
-  
-  /* Input box styles */
-  .submit-button input[type="text"] {
-    width: 75%;
-    padding: 5px;
-    margin: 0 14px 25px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-  }
-  
-  /* Add button styles */
-  .submit-button button {
-    background-color: #000000bf;
+/* Body background color */
+body {
+  background-color: #ffffff00;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  /* Add button hover styles */
-  .submit-button button:hover {
-    background-color: #0f77bdbf;
-  }
-  .submit-button input {
-    background-color: #252728bf;
-  }
-  
-  /* View JSON button styles */
-  .viewJson-button button {
-    background-color: #cf7900dd;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  /* View JSON button hover styles */
-  .viewJson-button button:hover {
-    background-color: #4fa3d1;
-  }
-  
-  /* Select dropdown styles */
-  .toggle-button {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 30px;
-        background-color: #252728bf;
-  }
-  
+/* Container for the to-do app */
+.todoContainer {
+  background-color: #8400ff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 450px;
+  margin-top: -25px;
+  overflow-y: auto;
+  height: 550px;
+}
+
+/* Heading styles */
+
+
+/* To-do list styles */
+.task {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  background-color: #000000bf;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 12px;
+
+}
+
+/* Checkbox styles */
+.task input[type="checkbox"] {
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #000000bf;
+
+}
+
+/* Input box styles */
+.submit-button input[type="text"] {
+  width: 75%;
+  padding: 5px;
+  margin: 0 14px 25px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Add button styles */
+.submit-button button {
+  background-color: #000000bf;
+
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Add button hover styles */
+.submit-button button:hover {
+  background-color: #0f77bdbf;
+}
+.submit-button input {
+  background-color: #252728bf;
+}
+
+/* View JSON button styles */
+.viewJson-button button {
+  background-color: #cf7900dd;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* View JSON button hover styles */
+.viewJson-button button:hover {
+  background-color: #4fa3d1;
+
+}
+
+/* Select dropdown styles */
+.toggle-button {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 30px;
+      background-color: #252728bf;
+}
+
