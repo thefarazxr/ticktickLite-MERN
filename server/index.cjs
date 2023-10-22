@@ -52,7 +52,13 @@ app.use(cors(
     credentials: true
   }
 ));
+
+app.use(router);
 app.use(express.json());
+
+
+
+
 
 app.get("/", (req, res) =>{
   res.json("Hello");
@@ -155,3 +161,5 @@ db.once("open", function () {
     console.log(`Example app listening at http://localhost:${port}`);
   });
 });
+
+export default app;
