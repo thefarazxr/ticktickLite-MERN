@@ -112,7 +112,7 @@ router.post("/login", async (req, res) => {
     });
     return;
   }
-  res.header('Access-Control-Allow-Origin', allowedOrigins);
+  res.header('Access-Control-Allow-Origin', '*');
   res.json({
     message: "success",
   });
