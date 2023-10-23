@@ -126,9 +126,12 @@ app.post("/login", async (req, res) => {
     res.json({
       message: "invalid login",
     });
+
     return;
   }
+  res.header("Access-Control-Allow-Origin", "*");
   res.json({
+    
     message: "success",
   });
 });
