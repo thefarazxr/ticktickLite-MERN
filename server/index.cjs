@@ -26,27 +26,26 @@ app.use(cors(
 
 const allowedOrigins = ['https://ticktick-lite-mern-gwms.vercel.app'];
 
-// app.use(
-//   cors({
-//     origin: (origin, callback) => {
-//       if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-//         callback(null, true);
-//       } else {
-//         callback(new Error('Not allowed by CORS'));
-//       }
-//     },
-//   })
-// );
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  })
+);
 
-// app.options('*', cors());
+app.options('*', cors());
 
 
-app.use(router);
+// app.use(router);
 app.use(express.json());
 
 
-router.get("/", (req, res) =>{
-  res.setHeader('Access-Control-Allow-Origin', allowedOrigins);
+app.get("/", (req, res) =>{
   res.json("Hello");
 }
 )
@@ -84,7 +83,7 @@ const Todos = mongoose.model("Todos", todosSchema);
 
 
 // for user registration, check if user is already registered else create!
-router.post("/register", async (req, res) => {
+app.post("/register", async (req, res) => {
   const { username, password } = req.body;
   const user = await User.findOne({ username }).exec();
   if (user) {
@@ -101,7 +100,7 @@ router.post("/register", async (req, res) => {
 });
 
 // Simple Login auth code
-router.post("/login", async (req, res) => {
+app.post("/login", async (req, res) => {
 
   const { username, password } = req.body;
   const user = await User.findOne({ username }).exec();
@@ -112,7 +111,6 @@ router.post("/login", async (req, res) => {
     });
     return;
   }
-  res.setHeader('Access-Control-Allow-Origin', allowedOrigins);
   res.json({
     message: "success",
   });
@@ -120,7 +118,7 @@ router.post("/login", async (req, res) => {
 
 
 // POST Request, ToDo List Authentication then => Create or Update based on existence of ToDo Object
-router.post("/todos", async (req, res) => {
+app.post("/todos", async (req, res) => {
   const { authorization } = req.headers;
   const [, token] = authorization.split(" ");
   const [username, password] = token.split(":");
@@ -149,7 +147,7 @@ router.post("/todos", async (req, res) => {
 });
 
 // GET request to fetch all existing ToDo list Objects
-router.get("/todos", async (req, res) => {
+app.get("/todos", async (req, res) => {
   const { authorization } = req.headers;
   const [, token] = authorization.split(" ");
   const [username, password] = token.split(":");
