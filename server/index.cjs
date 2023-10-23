@@ -19,8 +19,8 @@ const ObjectId = require("mongoose").Types.ObjectId;
 
 app.use(cors(
   {
-    origin: "https://ticktick-lite-mern-gwms.vercel.app",
-    methods: "GET, POST",
+    origin: ["https://ticktick-lite-mern-gwms.vercel.app"],
+    methods: ["GET", "POST"],
     credentials: true
   }
 ));

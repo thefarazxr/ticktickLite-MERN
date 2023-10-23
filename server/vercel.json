@@ -6,15 +6,6 @@
     }
     ],
     "routes": [
-        {
-        "src": "/login, /register, /todos", 
-      "methods": ["OPTIONS", "POST"], 
-      "dest": "/server/index.cjs", 
-      "headers": {
-        "Access-Control-Allow-Origin": "*", 
-        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-      }
-    },
     {
         "src": "/(.*)",
         "dest": "/"
