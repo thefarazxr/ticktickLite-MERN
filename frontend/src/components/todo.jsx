@@ -11,7 +11,7 @@ export default function Todos() {
   const [data, setData] = useState([]);
 
   const persist = (newTodos) => {
-    fetch(`http://localhost:4000/todos`, {
+    fetch(`https://ticktick-lite-mern-api2.vercel.app/todos`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,7 +22,7 @@ export default function Todos() {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:4000/todos`, {
+    fetch(`https://ticktick-lite-mern-api2.vercel.app/todos`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
