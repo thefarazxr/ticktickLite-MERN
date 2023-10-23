@@ -26,19 +26,19 @@ app.use(cors(
 
 const allowedOrigins = ['https://ticktick-lite-mern-gwms.vercel.app'];
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-  })
-);
+// app.use(
+//   cors({
+//     origin: (origin, callback) => {
+//       if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error('Not allowed by CORS'));
+//       }
+//     },
+//   })
+// );
 
-app.options('*', cors());
+// app.options('*', cors());
 
 app.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*"); // This allows requests from any origin.
