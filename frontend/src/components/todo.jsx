@@ -22,7 +22,7 @@ export default function Todos() {
   };
 
   useEffect(() => {
-    fetch(`https://ticktick-lite-mern-api2.vercel.app/todos`,  {
+    fetch(`https://ticktick-lite-mern-api2.vercel.app/todos`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
