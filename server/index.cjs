@@ -40,20 +40,25 @@ const allowedOrigins = ['https://ticktick-lite-mern-gwms.vercel.app'];
 
 // app.options('*', cors());
 
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*"); // This allows requests from any origin.
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+//   );
+//   if (req.method === "OPTIONS") {
+//     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
+//     return res.status(200).json({});
+//   }
+//   next();
+// });
+
+// app.use(router);
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*"); // This allows requests from any origin.
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, Authorization"
-  );
-  if (req.method === "OPTIONS") {
-    res.header("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
-    return res.status(200).json({});
-  }
+  res.header("Access-Control-Allow-Origin", "*");
   next();
 });
 
-// app.use(router);
 app.use(express.json());
 
 
