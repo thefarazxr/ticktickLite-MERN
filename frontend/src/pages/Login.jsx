@@ -21,7 +21,7 @@ export default function Login() {
     fetch(`https://ticktick-lite-mern-api2.vercel.app/login`, {
       method: "POST",
       headers: {
-        // "Content-Type": "application/json",
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         username,

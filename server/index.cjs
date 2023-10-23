@@ -16,13 +16,13 @@ const ObjectId = require("mongoose").Types.ObjectId;
 
 
 // MiddleWare setup using CORS to share data b/w different sources
-// app.use(cors(
-//   {
-//     origin: "https://ticktick-lite-mern-gwms.vercel.app",
-//     methods: "GET, POST",
-//     credentials: true
-//   }
-// ));
+app.use(cors(
+  {
+    origin: "https://ticktick-lite-mern-gwms.vercel.app",
+    methods: "GET, POST",
+    credentials: true
+  }
+));
 
 const allowedOrigins = ['https://ticktick-lite-mern-gwms.vercel.app'];
 
@@ -53,11 +53,11 @@ const allowedOrigins = ['https://ticktick-lite-mern-gwms.vercel.app'];
 //   next();
 // });
 
-// app.use(router);
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+app.use(router);
+// app.use((req, res, next) => {
+//   res.header("Access-Control-Allow-Origin", "*");
+//   next();
+// });
 
 app.use(express.json());
 
