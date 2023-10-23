@@ -46,7 +46,7 @@ app.use(express.json());
 
 
 router.get("/", (req, res) =>{
-  res.header('Access-Control-Allow-Origin', allowedOrigins);
+  res.setHeader('Access-Control-Allow-Origin', allowedOrigins);
   res.json("Hello");
 }
 )
@@ -112,7 +112,7 @@ router.post("/login", async (req, res) => {
     });
     return;
   }
-  res.header('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Origin', allowedOrigins);
   res.json({
     message: "success",
   });
