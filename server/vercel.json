@@ -6,6 +6,15 @@
     }
     ],
     "routes": [
+        {
+        "src": "/login, /register, /todos", 
+      "methods": ["OPTIONS", "POST"], 
+      "dest": "/server/index.cjs", 
+      "headers": {
+        "Access-Control-Allow-Origin": "https://ticktick-lite-mern-gwms.vercel.app", 
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+      }
+    },
     {
         "src": "/(.*)",
         "dest": "/"

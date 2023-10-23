@@ -16,6 +16,7 @@ const ObjectId = require("mongoose").Types.ObjectId;
 
 
 // MiddleWare setup using CORS to share data b/w different sources
+
 app.use(cors(
   {
     origin: "https://ticktick-lite-mern-gwms.vercel.app",
